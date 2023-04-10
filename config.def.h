@@ -27,7 +27,7 @@ static int restrict_return = 0;             /* -1 option; if 1, disables shift-r
 #endif // RESTRICT_RETURN_PATCH
 /* -fn option overrides fonts[0]; default X11 font or font set */
 #if PANGO_PATCH
-static char font[] = "monospace 10";
+static char font[] = "JetBrainsMono Nerd Font 10";
 #else
 #if XRESOURCES_PATCH
 static char *fonts[] =
@@ -35,7 +35,7 @@ static char *fonts[] =
 static const char *fonts[] =
 #endif // XRESOURCES_PATCH
 {
-	"monospace:size=10"
+	"JetBrainsMono Nerd Font:size=10"
 };
 #endif // PANGO_PATCH
 #if MANAGED_PATCH
@@ -56,8 +56,9 @@ static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
-	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeNorm] = { "#c6d0f5", "#303446" },
+	[SchemeSel] = { "#303446", "#8caaee" },
+	[SchemeOut] = { "#000000", "#8caaee" },
 	#if BORDER_PATCH
 	[SchemeBorder] = { OPAQUE, OPAQUE, OPAQUE },
 	#endif // BORDER_PATCH
