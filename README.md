@@ -1,3 +1,11 @@
+```
+nixpkgs.overlays = [
+(final: pre: {
+  dmenu = prev.dmenu.overrideAttrs (old: { src = /home/leon/gitHub/dmenu-flexipatch ;});
+})
+];
+```
+
 Similar to [dwm-flexipatch](https://github.com/bakkeby/dwm-flexipatch) this dmenu 5.2 (0fe460d,
 2023-04-05) project has a different take on patching. It uses preprocessor directives to decide
 whether or not to include a patch during build time. Essentially this means that this build, for
